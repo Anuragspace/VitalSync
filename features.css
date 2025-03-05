@@ -1,0 +1,678 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f4f7fa;
+    background: linear-gradient(-45deg, #f5f7fa, #ffffff, #e6f0ff, #f0f5ff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    padding-top: 70px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.navbar {
+    background: #217aef;
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 90%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 40px;
+}
+
+.navbar:hover {
+    background: rgba(59, 130, 246, 1);
+}
+
+.logo {
+    color: white;
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: white;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 80%;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.about-us-btn {
+    background-color: transparent;
+    border: 2px solid white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.about-us-btn:hover {
+    background-color: white;
+    color: #3B82F6;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.features-dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding: 40px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    perspective: 1000px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+    width: 300px;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(59, 130, 246, 0.03) 50%,
+        transparent 100%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+}
+
+.feature-card:hover::before {
+    transform: translateX(100%);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.feature-icon {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.feature-icon i {
+    font-size: 2.5rem;
+    color: #3B82F6;
+    transition: all 0.5s ease;
+}
+
+.feature-card:hover .feature-icon i {
+    transform: scale(1.2);
+    color: #2563eb;
+}
+
+.feature-card h3 {
+    color: #1f2937;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover h3 {
+    transform: scale(1.05);
+    color: #3B82F6;
+    transition: all 0.3s ease;
+}
+
+.feature-card p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover p {
+    color: #4b5563;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .features-dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .features-dashboard {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Advanced Animations */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+    }
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 15px 30px rgba(59, 130, 246, 0.2);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.1);
+    }
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Staggered Animation on Load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply staggered delay to cards */
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+.feature-card:nth-child(5) { animation-delay: 0.5s; }
+.feature-card:nth-child(6) { animation-delay: 0.6s; }
+.feature-card:nth-child(7) { animation-delay: 0.7s; }
+.feature-card:nth-child(8) { animation-delay: 0.8s; }
+
+/* Gradient Background Animation */
+body {
+    background: linear-gradient(-45deg, #f5f7fa, #ffffff, #e6f0ff, #f0f5ff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+/* Interactive hover effects */
+.feature-card:hover h3 {
+    transform: scale(1.05);
+    color: #3B82F6;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover p {
+    color: #4b5563;
+    transition: all 0.3s ease;
+}
+
+/* Add smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+    overflow: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Add this to your JavaScript file */
+
+.features-flow {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 60px;
+    color: #1f2937;
+}
+
+.feature-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.right-flow {
+    justify-content: flex-start;
+}
+
+.left-flow {
+    justify-content: flex-end;
+}
+
+.connector {
+    position: relative;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3B82F6, #60A5FA);
+    margin: 0 20px;
+}
+
+.connector .arrow {
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-right: 4px solid #3B82F6;
+    border-top: 4px solid #3B82F6;
+}
+
+.right-flow .arrow {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.left-flow .arrow {
+    left: -10px;
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+.feature-details {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 300px;
+}
+
+.feature-details h2 {
+    color: #1f2937;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.feature-details li {
+    color: #6b7280;
+    margin-bottom: 8px;
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+.feature-details li::before {
+    content: '•';
+    color: #3B82F6;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+/* Scroll Animation */
+.feature-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+}
+
+.feature-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add this to your existing media queries */
+@media (max-width: 768px) {
+    .feature-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .feature-card,
+    .feature-details {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .connector {
+        height: 60px;
+        margin: 20px 0;
+    }
+    
+    .left-flow .arrow,
+    .right-flow .arrow {
+        transform: translateX(-50%) rotate(135deg);
+        top: auto;
+        bottom: -10px;
+        left: 50%;
+    }
+}
+
+/* Animated Background Elements */
+.features-flow::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.03) 0%, transparent 50%);
+    animation: pulse 8s infinite;
+    z-index: -1;
+}
+
+/* Refined Card Styles */
+.feature-card {
+    width: 300px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Enhanced Icon Animations */
+.feature-icon::after {
+    display: none;
+}
+
+/* Refined Details Box */
+.feature-details {
+    width: 300px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+}
+
+.feature-details:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+}
+
+.feature-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-details li {
+    color: #6b7280;
+    margin-bottom: 12px;
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.feature-details li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    background: #3B82F6;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.feature-details li:hover {
+    color: #3B82F6;
+}
+
+.feature-details li:hover::before {
+    transform: translateY(-50%) scale(1.5);
+}
+
+/* Enhanced Connector Styles */
+.connector {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #3B82F6, #60A5FA);
+    margin: 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.connector::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+/* Animations */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 0.5; }
+}
+
+@keyframes shimmer {
+    100% { left: 100%; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feature-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .connector {
+        height: 60px;
+        width: 4px;
+        margin: 20px 0;
+    }
+    
+    .feature-card,
+    .feature-details {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+
+/* Ensure content stays above background */
+.features-flow {
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional: Add subtle blur to background */
+.background-animation::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(80px);
+    pointer-events: none;
+}
+
+/* Add media query for responsiveness */
+@media (max-width: 1024px) {
+    .nav-links {
+        width: 50%;
+        justify-content: center;
+    }
+}
+
+/* Updated Navbar Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 20px;
+        width: calc(100% - 40px);
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(59, 130, 246, 0.95);
+        padding: 1rem 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem 0;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .about-us-btn {
+        margin-top: 10px;
+    }
+}
+
+/* Mobile menu button styles */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+}

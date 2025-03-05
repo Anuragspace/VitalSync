@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalSync - Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="analysis.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">VitalSync</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="health-monitor.html">Health Monitor</a>
+            <a href="analysis.html">Analysis</a>
+        </div>
+        <a href="contact.html" class="about-us-btn">About Us</a>
+    </nav>
+
+    <main class="analysis-container">
+        <div class="metrics-grid">
+            <!-- Temperature Card -->
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-temperature-high"></i>
+                </div>
+                <div class="metric-info">
+                    <h3>Temperature</h3>
+                    <div class="metric-value" id="temperature">--</div>
+                    <div class="metric-unit">°C</div>
+                    <div class="normal-range">Normal: 36.1-37.2°C</div>
+                </div>
+            </div>
+
+            <!-- Humidity Card -->
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <div class="metric-info">
+                    <h3>Humidity</h3>
+                    <div class="metric-value" id="humidity">--</div>
+                    <div class="metric-unit">%</div>
+                    <div class="normal-range">Normal: 30-60%</div>
+                </div>
+            </div>
+
+            <!-- Heart Rate Card -->
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <div class="metric-info">
+                    <h3>Heart Rate</h3>
+                    <div class="metric-value" id="heartRate">--</div>
+                    <div class="metric-unit">BPM</div>
+                    <div class="normal-range">Normal: 60-100 BPM</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ECG Monitor -->
+        <div class="ecg-monitor">
+            <div class="monitor-header">
+                <h2>ECG Real-time Monitor</h2>
+                <div class="monitor-controls">
+                    <button id="pauseBtn" class="control-btn">
+                        <i class="fas fa-pause"></i>
+                    </button>
+                    <button id="downloadBtn" class="control-btn">
+                        <i class="fas fa-download"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="monitor-grid">
+                <canvas id="ecgChart"></canvas>
+            </div>
+        </div>
+
+        <!-- After the ECG monitor section -->
+        <div class="activity-metrics">
+            <!-- Steps Card -->
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-shoe-prints"></i>
+                </div>
+                <div class="metric-info">
+                    <h3>Steps</h3>
+                    <div class="metric-value" id="stepCount">0</div>
+                    <div class="metric-unit">steps</div>
+                    <div class="normal-range">Goal: 10,000 steps</div>
+                </div>
+            </div>
+
+            <!-- Distance Card -->
+            <div class="metric-card">
+                <div class="metric-icon">
+                    <i class="fas fa-road"></i>
+                </div>
+                <div class="metric-info">
+                    <h3>Distance</h3>
+                    <div class="metric-value" id="distanceCount">0.00</div>
+                    <div class="metric-unit">km</div>
+                    <div class="normal-range">Based on step count</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Alert Section -->
+        <div class="analysis-alert">
+            <div class="alert-header">
+                <h2 style="color: #2C3E50;">Health Analysis Report</h2>
+                <span class="risk-category" id="riskCategory">Analyzing...</span>
+            </div>
+            <div class="alert-message" id="alertMessage">
+                Monitoring your vital signs...
+            </div>
+            <button class="refresh-analysis-btn" id="refreshAnalysis">
+                <i class="fas fa-sync-alt"></i> Update Analysis
+            </button>
+        </div>
+
+        <div id="connectionStatus" class="status-indicator">🟡 Waiting...</div>
+    </main>
+
+    <script src="analysis.js"></script>
+</body>
+</html> 

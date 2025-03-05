@@ -1,0 +1,753 @@
+/* Base styles */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background: linear-gradient(-45deg, #f5f7fa, #ffffff, #e6f0ff, #f0f5ff);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  padding-top: 70px;
+}
+
+/* Updated Navbar Styles */
+.navbar {
+  background:#217aef;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.navbar:hover {
+    background: rgba(33, 122, 239, 1);
+}
+
+.logo {
+  color: white;
+  font-size: 1.8rem;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 20px;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+/* Active state */
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* Responsive Design for navbar */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgb(82, 127, 239);
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 10px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 0;
+  }
+
+  .about-us-btn {
+    margin-right: 50px;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+.about-us-btn {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 24px;
+  border: 2px solid white;
+  border-radius: 24px;
+  margin-right: 20px;
+  transition: all 0.3s ease;
+}
+
+.about-us-btn:hover {
+  background: white;
+  color: rgb(82, 127, 239);
+}
+
+/* Analysis Content Styles */
+.analysis-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 15px;
+}
+
+.analysis-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.analysis-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Chart containers */
+.chart-container {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  width: 100%;
+  min-height: 250px;
+}
+
+.chart-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+}
+
+/* Buttons and Interactive Elements */
+.analysis-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.analysis-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+/* Mobile menu button styles */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Animations */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Table Styles */
+.analysis-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.analysis-table th,
+.analysis-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.analysis-table th {
+  background: #3b82f6;
+  color: white;
+  font-weight: 500;
+}
+
+.analysis-table tr:hover {
+  background: #f8fafc;
+}
+
+/* Form Elements */
+.analysis-form input,
+.analysis-form select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.analysis-form input:focus,
+.analysis-form select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Loading States */
+.loading-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3b82f6;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+}
+
+.metric-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 8px 32px rgba(32, 122, 239, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+}
+
+.metric-icon {
+  background: rgba(32, 122, 239, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #207aef;
+}
+
+.metric-info {
+  flex: 1;
+}
+
+.metric-info h3 {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.metric-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #207aef;
+  font-family: "Figtree", sans-serif;
+}
+
+.metric-unit {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* ECG Monitor */
+.ecg-monitor {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 8px 32px rgba(32, 122, 239, 0.1);
+}
+
+.monitor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.monitor-header h2 {
+  color: #1a1a1a;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.monitor-controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #207aef;
+  transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+  background: rgba(32, 122, 239, 0.1);
+}
+
+.monitor-grid {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.monitor-grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(26, 26, 26, 0) 0%,
+    rgba(26, 26, 26, 0.5) 50%,
+    rgba(26, 26, 26, 0) 100%
+  );
+  pointer-events: none;
+  animation: scanline 2s linear infinite;
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Alert states */
+.metric-card.alert {
+  animation: pulse 2s infinite;
+}
+
+.metric-card.error {
+  opacity: 0.7;
+}
+
+.metric-card.alert .metric-value {
+  color: #ff3b30;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 8px 32px rgba(255, 59, 48, 0.1);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(255, 59, 48, 0.3);
+  }
+  100% {
+    box-shadow: 0 8px 32px rgba(255, 59, 48, 0.1);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+
+  .monitor-grid {
+    height: 250px;
+    padding: 1rem;
+  }
+
+  .monitor-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .control-btn {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #28a745;
+  font-weight: 500;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #28a745;
+  border-radius: 50%;
+}
+
+.connected .status-dot {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Analysis Alert Styles */
+.analysis-alert {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+.alert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.alert-message {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 15px 0;
+}
+
+.risk-category {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+/* Risk Category Colors */
+.high-risk {
+  background-color: #ff4444;
+  color: white;
+}
+
+.moderate-risk {
+  background-color: #ffbb33;
+  color: white;
+}
+
+.low-risk {
+  background-color: #00c851;
+  color: white;
+}
+
+.healthy {
+  background-color: #33b5e5;
+  color: white;
+}
+
+/* Refresh Button Animation */
+.rotating {
+  animation: rotate 1s linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Refresh Button Styling */
+.refresh-analysis-btn {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.refresh-analysis-btn:hover {
+  background-color: #3367d6;
+}
+
+.refresh-analysis-btn i {
+  font-size: 14px;
+}
+
+/* Add after the metrics-grid styles */
+.activity-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
+@media screen and (max-width: 768px) {
+  .activity-metrics {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+}
+
+.normal-range {
+  color: #666;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Additional Mobile Optimizations */
+@media screen and (max-width: 480px) {
+  .metric-card {
+    padding: 1rem;
+  }
+
+  .metric-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .metric-value {
+    font-size: 1.5rem;
+  }
+
+  .metric-unit {
+    font-size: 0.8rem;
+  }
+
+  .normal-range {
+    font-size: 0.7rem;
+  }
+}
+
+/* Ensure proper spacing between sections */
+.metrics-grid,
+.ecg-monitor,
+.activity-metrics,
+.analysis-alert {
+  margin-bottom: 1.5rem;
+}
+
+/* Improve touch targets for mobile */
+button,
+.control-btn,
+.refresh-analysis-btn {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Improve chart visibility on mobile */
+.monitor-grid {
+  background: #1a1a1a;
+  border-radius: 8px;
+  margin: 0 -10px;
+  padding: 10px;
+}
+
+/* Add smooth transitions */
+.metric-card,
+.control-btn,
+.refresh-analysis-btn {
+  transition: all 0.3s ease;
+}
+
+/* Improve text readability on mobile */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Navbar Responsive */
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    margin-left: 10px;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    order: 3;
+    background: rgb(82, 127, 239);
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-links a {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .about-us-btn {
+    margin-right: 10px;
+    padding: 6px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Status Indicator Responsive */
+@media screen and (max-width: 768px) {
+  #connectionStatus {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+/* Chart.js Specific Adjustments */
+@media screen and (max-width: 768px) {
+  canvas#ecgChart {
+    height: 200px !important;
+  }
+}

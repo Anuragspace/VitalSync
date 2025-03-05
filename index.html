@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VitalSync - Health Monitoring</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="background-waves"></div>
+
+    <button class="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <nav class="navbar">
+      <div class="logo">VitalSync</div>
+      <div class="nav-content">
+        <div class="center-nav">
+          <a href="#home">Home</a>
+          <a href="features.html">Features</a>
+          <a href="health-monitor.html" class="active">Health Monitor</a>
+          <a href="analysis.html">Analysis</a>
+        </div>
+
+        <a href="contact.html" class="about-btn">About Us</a>
+      </div>
+    </nav>
+
+    <div class="scroll-progress"></div>
+
+    <main class="hero">
+      <div class="hero-content">
+        <div class="main-text">
+          <h1>Real-Time Vitals, Smarter Performance</h1>
+          <h2>Empowering Runners and Athletes</h2>
+        </div>
+
+        <div class="bottom-content">
+          <p>
+            VitalSync tracks heart rate, ECG, and vitals in real time,<br />
+            optimizing performance and health for athletes and fitness
+            enthusiasts.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="ecg-section">
+      <div class="ecg-content">
+        <div class="ecg-info">
+          <h2>Advanced ECG Analytics</h2>
+          <p class="ecg-intro">
+            Experience real-time cardiac monitoring with our state-of-the-art
+            ECG technology.
+          </p>
+
+          <div class="card">
+            <div class="card-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3>Real-Time Monitoring</h3>
+            <p>
+              Advanced algorithms for instant heart rhythm analysis and anomaly
+              detection with medical-grade accuracy.
+            </p>
+            <ul class="feature-list">
+              <li>Beat-to-beat analysis</li>
+              <li>Arrhythmia detection</li>
+              <li>24/7 continuous monitoring</li>
+              <li>AI-powered diagnostics</li>
+            </ul>
+            <div class="card-stats">
+              <div class="stat">
+                <span>99.9%</span>
+                <label>Accuracy</label>
+              </div>
+              <div class="stat">
+                <span>&lt;1s</span>
+                <label>Response</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ecg-monitor">
+          <div class="monitor-header">
+            <div class="patient-info">
+              <span class="label">Name</span>
+              <span class="value">Shreesh</span>
+              <span class="label">Age</span>
+              <span class="value">21</span>
+            </div>
+            <div class="monitor-controls">
+              <button class="control-btn"><i class="fas fa-print"></i></button>
+              <button class="control-btn">
+                <i class="fas fa-download"></i>
+              </button>
+              <button class="control-btn active">
+                <i class="fas fa-play"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="monitor-frame">
+            <div class="vital-indicators">
+              <div class="indicator">
+                <span class="label">HR</span>
+                <span class="value">72</span>
+                <span class="unit">bpm</span>
+              </div>
+              <div class="indicator">
+                <span class="label">PR</span>
+                <span class="value">160</span>
+                <span class="unit">ms</span>
+              </div>
+              <div class="indicator">
+                <span class="label">QT</span>
+                <span class="value">380</span>
+                <span class="unit">ms</span>
+              </div>
+              <div class="indicator">
+                <span class="label">QRS</span>
+                <span class="value">90</span>
+                <span class="unit">ms</span>
+              </div>
+            </div>
+
+            <div class="ecg-grid">
+              <canvas id="ecgCanvas"></canvas>
+            </div>
+
+            <div class="monitor-stats">
+              <div class="stat">
+                <span class="label">SpO2</span>
+                <span class="value">98%</span>
+              </div>
+              <div class="stat">
+                <span class="label">RESP</span>
+                <span class="value">16</span>
+              </div>
+              <div class="stat">
+                <span class="label">TEMP</span>
+                <span class="value">36.8°C</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Athlete Performance Section -->
+    <section class="athlete-section">
+      <div class="athlete-header">
+        <h2>Performance Analytics</h2>
+        <p>
+          Real-time tracking and analysis of your running metrics for optimal
+          training
+        </p>
+      </div>
+
+      
+
+      <div class="athlete-content">
+        <div class="parameter-box distance-box">
+          <div class="parameter-title">Weekly Distance</div>
+          <div class="parameter-value">85.5</div>
+          <div class="parameter-unit">kilometers</div>
+          <div class="parameter-trend trend-positive">
+            <span>+12% vs last week</span>
+          </div>
+        </div>
+
+        <div class="parameter-box pace-box">
+          <div class="parameter-title">Average Pace</div>
+          <div class="parameter-value">4:25</div>
+          <div class="parameter-unit">min/km</div>
+          <div class="parameter-trend trend-positive">
+            <span>-15s improvement</span>
+          </div>
+        </div>
+
+        <div class="parameter-box load-box">
+          <div class="parameter-title">Training Load</div>
+          <div class="parameter-value">890</div>
+          <div class="parameter-unit">TRIMP score</div>
+          <div class="parameter-trend trend-neutral">
+            <span>Optimal range</span>
+          </div>
+        </div>
+
+        <div class="parameter-box recovery-box">
+          <div class="parameter-title">Recovery Status</div>
+          <div class="parameter-value">92</div>
+          <div class="parameter-unit">readiness score</div>
+          <div class="parameter-trend trend-positive">
+            <span>Ready for peak performance</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="athlete-image">
+        <img src="asset/athelete.png" alt="Elite Runner in Motion" />
+      </div>
+    </section>
+
+    <section class="about-project">
+        <div class="about-content">
+            <div class="about-item vision">
+                <div class="about-image">
+                    <img src="asset/board.jpg" alt="Vision Image" />
+                </div>
+                <div class="about-text">
+                    <h2>Our Vision</h2>
+                    <p>
+                        Our vision is to revolutionize health monitoring through innovative technology, empowering athletes and fitness enthusiasts to achieve their best performance.
+                    </p>
+                </div>
+            </div>
+            <div class="about-item mission">
+                <div class="about-image">
+                    <img src="asset/board2.jpg" alt="Mission Image" />
+                </div>
+                <div class="about-text">
+                    <h2>Our Mission</h2>
+                    <p>
+                        Our mission is to provide real-time health insights and analytics, ensuring that every athlete can train smarter and safer, maximizing their potential.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="features.html">Features</a>
+                <a href="health-monitor.html">Health Monitor</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="social-media">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

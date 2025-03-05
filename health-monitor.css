@@ -1,0 +1,896 @@
+/* Main Container Styles */
+.dashboard-container {
+    padding: 2rem;
+    background: #f5f7ff;
+    min-height: 100vh;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+}
+
+.header-title h1 {
+    color: #1A1A1A;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.header-title p {
+    color: #666666;
+    font-size: 1rem;
+}
+
+.date-filter {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.date-filter button {
+    padding: 0.6rem 1.2rem;
+    border: 1px solid #207AEF;
+    background: transparent;
+    color: #207AEF;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.date-filter button.active {
+    background: #207AEF;
+    color: white;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* Card Base Styles */
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(32, 122, 239, 0.1);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-header i {
+    color: #207AEF;
+    font-size: 1.4rem;
+    margin-right: 0.8rem;
+}
+
+.card-header h3 {
+    color: #1A1A1A;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* User Card */
+.user-card {
+    grid-column: span 1;
+}
+
+.user-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.user-avatar {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.user-info h2 {
+    color: #1A1A1A;
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+.user-id {
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+.vital-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #F8F9FF;
+    border-radius: 12px;
+}
+
+.stat-item i {
+    color: #207AEF;
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.stat-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    color: #666666;
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    color: #1A1A1A;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Heart Rate Card */
+.heart-rate-card {
+    grid-column: span 2;
+}
+
+.current-rate {
+    margin-left: auto;
+    text-align: right;
+}
+
+.rate-value {
+    color: #207AEF;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.rate-unit {
+    color: #666666;
+    font-size: 1rem;
+    margin-left: 0.3rem;
+}
+
+.heart-rate-chart {
+    height: 250px;
+    margin-top: 1rem;
+}
+
+/* SpO2 Card */
+.spo2-card {
+    position: relative;
+}
+
+.circular-progress {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 1rem auto;
+}
+
+.progress-ring-circle {
+    transition: stroke-dashoffset 0.3s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+.progress-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.progress-value .value {
+    color: #207AEF;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.progress-value .unit {
+    color: #666666;
+    font-size: 1.2rem;
+}
+
+.spo2-stats {
+    margin-top: 1.5rem;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    color: #666666;
+}
+
+.status-good {
+    color: #4CAF50;
+    font-weight: 500;
+}
+
+/* Activity Card */
+.activity-card {
+    grid-column: span 2;
+}
+
+.total-steps {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.step-count {
+    color: #207AEF;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.step-label {
+    color: #666666;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+}
+
+.activity-chart {
+    height: 200px;
+}
+
+/* Hydration Card Styles */
+.hydration-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.hydration-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.water-progress {
+    position: relative;
+    width: 60px;
+    height: 200px;
+    background: rgba(32, 122, 239, 0.1);
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.water-level {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #207AEF;
+    transition: height 0.5s ease;
+    border-radius: 30px;
+}
+
+.water-target,
+.water-current {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.water-target {
+    top: 10px;
+}
+
+.water-current {
+    bottom: 10px;
+    color: white;
+}
+
+.hydration-chart {
+    flex: 1;
+    height: 200px;
+}
+
+/* ECG Card */
+.ecg-card {
+    grid-column: span 2;
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem 1.5rem;
+    box-shadow: 0 4px 15px rgba(32, 122, 239, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.ecg-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(32, 122, 239, 0.15);
+}
+
+.ecg-content {
+    margin-top: 1rem;
+}
+
+.ecg-status {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.ecg-status .status-value {
+    background: #e8f5e9;
+    color: #4CAF50;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.ecg-display {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    padding: 0 1rem;
+}
+
+.ecg-metrics {
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(145deg, #f8f9fa, #ffffff);
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.metric-item {
+    position: relative;
+    padding-left: 10px;
+}
+
+.metric-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 3px;
+    height: 70%;
+    background: #207AEF;
+    transform: translateY(-50%);
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+.metric-time {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.metric-time::before {
+    content: '•';
+    color: #207AEF;
+    animation: pulse 2s infinite;
+}
+
+.metric-value {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+}
+
+.metric-value strong {
+    font-size: 1.8rem;
+    color: #207AEF;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(32, 122, 239, 0.1);
+    transition: all 0.3s ease;
+}
+
+.metric-value span {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.2rem;
+    letter-spacing: 0.5px;
+}
+
+.ecg-container {
+    flex-grow: 1;
+    position: relative;
+    height: 300px;
+    width: 100%;
+    min-width: 700px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.ecg-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: 40px 40px;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.ecg-grid::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: 200px 200px;
+    background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+}
+
+.ecg-user-line {
+    position: absolute;
+    height: 100%;
+    width: 400%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-repeat: repeat-x;
+    background-size: 800px 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 100'%3E%3Cpath d='M0,50 L300,50 L300,50 L305,50 L310,20 L315,80 L320,50 L325,50 L350,50 L500,50 L500,50 L505,50 L510,20 L515,80 L520,50 L525,50 L550,50 L800,50' stroke='%23207AEF' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    animation: ecgAnimate 20s linear infinite;
+    filter: drop-shadow(0 0 3px rgba(32, 122, 239, 0.6));
+}
+
+@keyframes ecgAnimate {
+    0% { 
+        transform: translateX(0) translateY(-50%);
+    }
+    100% { 
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+/* Performance Optimizations */
+.ecg-user-line {
+    backface-visibility: hidden;
+    perspective: 1000;
+    transform-style: preserve-3d;
+}
+
+/* Hover Effects */
+.metric-item:hover strong {
+    color: #1756a9;
+    transform: scale(1.05);
+}
+
+.ecg-metrics:hover {
+    transform: translateX(5px);
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .ecg-metrics {
+        background: linear-gradient(145deg, #1a1a1a, #222);
+    }
+    
+    .metric-label,
+    .metric-time {
+        color: #999;
+    }
+}
+
+/* Enhanced Responsive Design */
+@media screen and (max-width: 1200px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .ecg-card, .heart-rate-card, .activity-card {
+        grid-column: span 2;
+    }
+
+    .ecg-display {
+        flex-direction: column;
+    }
+
+    .ecg-metrics {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .ecg-container {
+        min-width: unset;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dashboard-container {
+        padding: 1rem;
+    }
+
+    .dashboard-header {
+        margin-top: 5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .header-title h1 {
+        font-size: 1.75rem;
+    }
+
+    .date-filter {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .date-filter button {
+        flex: 1;
+        margin: 0 0.25rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    .user-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .user-avatar {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .vital-stats {
+        gap: 0.75rem;
+    }
+
+    .stat-item {
+        padding: 0.75rem;
+    }
+
+    .heart-rate-card, .activity-card, .ecg-card {
+        grid-column: span 1;
+    }
+
+    .heart-rate-chart, .activity-chart {
+        height: 200px;
+    }
+
+    .circular-progress {
+        width: 150px;
+        height: 150px;
+    }
+
+    .progress-value .value {
+        font-size: 2rem;
+    }
+
+    .hydration-content {
+        flex-direction: row;
+        align-items: center;
+        padding: 0.5rem;
+        gap: 1rem;
+    }
+
+    .water-progress {
+        width: 40px;
+        height: 150px;
+        margin-left: 0.5rem;
+    }
+
+    .water-target,
+    .water-current {
+        font-size: 0.8rem;
+        width: max-content;
+    }
+
+    .hydration-chart {
+        height: 150px;
+        width: calc(100% - 60px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dashboard-header {
+        margin-top: 4rem;
+    }
+
+    .header-title h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-title p {
+        font-size: 0.9rem;
+    }
+
+    .date-filter button {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .card-header h3 {
+        font-size: 1rem;
+    }
+
+    .card-header i {
+        font-size: 1.2rem;
+    }
+
+    .rate-value {
+        font-size: 2rem;
+    }
+
+    .ecg-metrics {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .metric-item {
+        flex: 1 1 40%;
+    }
+
+    .metric-value strong {
+        font-size: 1.4rem;
+    }
+
+    .ecg-container {
+        height: 180px;
+    }
+
+    .hydration-content {
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+
+    .water-progress {
+        width: 30px;
+        height: 120px;
+    }
+
+    .water-target,
+    .water-current {
+        font-size: 0.7rem;
+    }
+
+    .hydration-chart {
+        height: 120px;
+        width: calc(100% - 40px);
+    }
+}
+
+/* Add safe area insets for notched phones */
+@supports (padding: env(safe-area-inset-top)) {
+    .dashboard-container {
+        padding-top: calc(1rem + env(safe-area-inset-top));
+        padding-left: calc(1rem + env(safe-area-inset-left));
+        padding-right: calc(1rem + env(safe-area-inset-right));
+        padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+    }
+}
+
+/* Optimize performance */
+.dashboard-grid {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+.card {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Remove existing navbar styles and replace with these */
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgba(33, 122, 239, 0.95);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    height: 70px;
+}
+
+.navbar:hover {
+    background: rgba(33, 122, 239, 1);
+}
+
+.logo {
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: 600;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.about-us-btn {
+    background: transparent;
+    border: 2px solid white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 4px;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.about-us-btn:hover {
+    background-color: white;
+    color: #217aef;
+    transform: translateY(-2px);
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-about {
+    display: none;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 20px;
+        height: 70px;
+    }
+
+    .nav-links {
+        top: 70px;
+        padding: 0;
+    }
+
+    .nav-links a {
+        padding: 1rem 2rem;
+        text-align: left;
+        width: 100%;
+    }
+
+    .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(59, 130, 246, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 1rem 2rem;
+        text-align: left;
+    }
+
+    .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .desktop-about {
+        display: none;
+    }
+
+    .mobile-about {
+        display: block;
+        margin: 1rem 2rem;
+        text-align: center;
+    }
+}

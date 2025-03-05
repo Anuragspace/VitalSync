@@ -1,0 +1,355 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    
+    font-size: 2.5rem;
+    color: #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #e0e0e0;
+}
+
+.feature-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.feature-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+.feature-item h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.contact-container {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #207AEF;
+}
+
+h1 {
+    font-size: 3rem;
+    color: white;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    margin-top: 5rem;
+    line-height: 1.2;
+}
+
+.team-intro {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.team-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    min-height: 560px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.member-image {
+    position: relative;
+    width: 240px;
+    height: 360px;
+    margin: 0.5rem auto;
+    overflow: hidden;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+}
+
+.member-image img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+/* Added specific styling for Anurag's image */
+.team-card:nth-child(1) .member-image img {
+    object-position: center top;
+    scale: 1.15;
+}
+
+/* Adjusted Shreesh's image styling to remove gap */
+.team-card:nth-child(2) .member-image img {
+    object-position: center 25px;  /* Changed from 15% to 25px to move down and match others */
+    scale: 1;
+}
+
+/* Updated Om's image styling to remove gap */
+.team-card:nth-child(3) .member-image img {
+    object-position: center 25px;  /* Changed from 15px to 25px to move down and match others */
+    scale: 1;
+}
+
+/* Updated Mohit's image styling */
+.team-card:nth-child(4) .member-image img {
+    object-position: center 15px;
+    scale: 1.15;
+}
+
+.placeholder-image {
+    font-size: 8rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.member-info {
+    text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0 0.5rem;
+}
+
+.member-info h3 {
+    color: white;
+    font-family: 'Figtree', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.member-role {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.member-bio {
+    color: rgba(255, 255, 255, 0.8);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.8rem;
+    opacity: 0.8;
+}
+
+.social-icon:hover {
+    opacity: 1;
+}
+
+/* Add animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.about-section h2 {
+    color: white;
+    margin-bottom: 1rem;
+    font-family: 'Figtree', sans-serif;
+    font-weight: 600;
+}
+
+.about-section p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: #207AEF;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: white;
+    font-family: 'Figtree', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-right: 3rem; /* Increased spacing after logo */
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem; /* Uniform gap between all nav items */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    text-align: center; /* Center align text */
+    line-height: 1.2; /* Consistent line height */
+    min-width: 80px; /* Minimum width for consistency */
+}
+
+/* Specific styling for multi-word nav items */
+.nav-links a.health-monitor,
+.nav-links a.analysis {
+    min-width: 100px; /* Consistent width for longer text */
+    display: inline-block; /* Ensures proper text wrapping */
+    padding: 0.5rem 1rem;
+    text-align: center;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Style for the About Us button */
+.about-us-btn {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    border: 2px solid white;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    margin-left: 2.5rem; /* Consistent spacing with nav-links gap */
+}
+
+.about-us-btn:hover {
+    background-color: white;
+    color: #207AEF;
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VitalSync - Health Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="health-monitor.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="/index.html" class="logo">VitalSync</a>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="health-monitor.html">Health Monitor</a>
+            <a href="analysis.html">Analysis</a>
+            <a href="contact.html" class="about-us-btn mobile-about">About Us</a>
+        </div>
+        <a href="contact.html" class="about-us-btn desktop-about">About Us</a>
+    </nav>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+        <!-- Dashboard Header -->
+        <header class="dashboard-header">
+            <div class="header-title">
+                <h1>Health Monitor</h1>
+                <p>Track your vital signs and daily activities</p>
+            </div>
+            <div class="date-filter">
+                <button class="active">Today</button>
+                <button>Week</button>
+                <button>Month</button>
+            </div>
+        </header>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- User Profile Card -->
+            <div class="card user-card">
+                <div class="user-header">
+                    <div class="user-avatar">
+                        <img src="asset/shreesh.png" alt="User Avatar">
+                    </div>
+                    <div class="user-info">
+                        <h2>Shreesh Pathak</h2>
+                        <p class="user-id">ID: #22BML0063</p>
+                    </div>
+                </div>
+                <div class="vital-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-temperature-high"></i>
+                        <div class="stat-content">
+                            <span class="stat-label">Temperature</span>
+                            <span class="stat-value">36.5°</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-weight"></i>
+                        <div class="stat-content">
+                            <span class="stat-label">Weight</span>
+                            <span class="stat-value">75 kg</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-tint"></i>
+                        <div class="stat-content">
+                            <span class="stat-label">Humidity</span>
+                            <span class="stat-value">45%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heart Rate Card -->
+            <div class="card heart-rate-card">
+                <div class="card-header">
+                    <div class="header-left">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Heart Rate</h3>
+                    </div>
+                    <div class="current-rate">
+                        <span class="rate-value">82</span>
+                        <span class="rate-unit">BPM</span>
+                    </div>
+                </div>
+                <div class="heart-rate-chart">
+                    <canvas id="heartRateChart"></canvas>
+                </div>
+            </div>
+
+            <!-- SpO2 Card -->
+            <div class="card spo2-card">
+                <div class="card-header">
+                    <i class="fas fa-lungs"></i>
+                    <h3>Blood Oxygen</h3>
+                </div>
+                <div class="spo2-content">
+                    <div class="circular-progress">
+                        <svg class="progress-ring" width="200" height="200">
+                            <circle class="progress-ring-circle" stroke="#207AEF" stroke-width="12" fill="transparent" r="90" cx="100" cy="100"/>
+                        </svg>
+                        <div class="progress-value">
+                            <span class="value">98</span>
+                            <span class="unit">%</span>
+                        </div>
+                    </div>
+                    <div class="spo2-stats">
+                        <div class="stat-row">
+                            <span>Normal Range</span>
+                            <span>95-100%</span>
+                        </div>
+                        <div class="stat-row">
+                            <span>Status</span>
+                            <span class="status-good">Excellent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity Tracking Card -->
+            <div class="card activity-card">
+                <div class="card-header">
+                    <i class="fas fa-walking"></i>
+                    <h3>Activity Tracking</h3>
+                </div>
+                <div class="activity-content">
+                    <div class="total-steps">
+                        <span class="step-count">10,428</span>
+                        <span class="step-label">Average Steps</span>
+                    </div>
+                    <div class="activity-chart">
+                        <canvas id="activityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ECG Card -->
+            <div class="card ecg-card">
+                <div class="card-header">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>ECG Analysis</h3>
+                </div>
+                <div class="ecg-content">
+                    <div class="ecg-display">
+                        <div class="ecg-metrics">
+                            <div class="metric-item">
+                                <span class="metric-time">12:45:30</span>
+                                <div class="metric-value">
+                                    <span>HR</span>
+                                    <strong>72</strong>
+                                    <span>bpm</span>
+                                </div>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">PR</span>
+                                <strong>160ms</strong>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">QT</span>
+                                <strong>380ms</strong>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-label">QRS</span>
+                                <strong>98ms</strong>
+                            </div>
+                        </div>
+                        <div class="ecg-container">
+                            <div class="ecg-grid"></div>
+                            <div class="ecg-user-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hydration Card -->
+            <div class="card hydration-card">
+                <div class="card-header">
+                    <i class="fas fa-glass-water"></i>
+                    <h3>Hydration</h3>
+                </div>
+                <div class="hydration-content">
+                    <div class="water-progress">
+                        <div class="water-level" style="height: 65%"></div>
+                        <span class="water-target">2.0L</span>
+                        <span class="water-current">1.3L</span>
+                    </div>
+                    <div class="hydration-chart">
+                        <canvas id="hydrationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="health-monitor.js"></script>
+</body>
+</html>
